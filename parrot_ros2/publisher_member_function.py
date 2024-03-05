@@ -2,7 +2,7 @@ import rclpy
 from rclpy.node import Node
 
 from std_msgs.msg import String
-
+from libctrl.tools import PidController
 
 class MinimalPublisher(Node):
 
@@ -24,6 +24,8 @@ class MinimalPublisher(Node):
 def main(args=None):
     rclpy.init(args=args)
 
+    x_axis_controller = PidController([1,2,3, 4], 0.4)
+    
     minimal_publisher = MinimalPublisher()
 
     rclpy.spin(minimal_publisher)
