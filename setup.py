@@ -20,6 +20,7 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
+            'talker = parrot_ros2.publisher_member_function:main',
         ],
     },
 )
